@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<scenario description="Escenario del proyecto"
+<scenario description="Escenario para QCNC"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
 
@@ -16,7 +16,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     </interface>
   </container>
 
-  <container name="sdn_node" hostname="sdn_node" type="sdn_node">
+  <container name="sdn_node" hostname="sdn_node" type="sdn-qorchestrator">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.7.10/24</default_ip>
     </interface>
