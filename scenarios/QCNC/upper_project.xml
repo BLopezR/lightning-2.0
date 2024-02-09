@@ -4,13 +4,13 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
 
-  <container name="qnode1" hostname="qnode1" type="qnode">
+  <container name="qnode1" hostname="qnode1" type="qnode_orch">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.5.10/24</default_ip>
     </interface>
   </container>
 
-  <container name="qnode2" hostname="qnode2" type="qnode">
+  <container name="qnode2" hostname="qnode2" type="qnode_orch">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.6.10/24</default_ip>
     </interface>
