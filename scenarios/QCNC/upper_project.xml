@@ -6,57 +6,99 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
 
   <container name="qnode1" hostname="qnode1" type="qnode_orch">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.5.10/24</default_ip>
+      <default_ip>192.168.0.10/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.1.10/24</default_ip>
+    </interface>
+    <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.7.10/24</default_ip>
     </interface>
   </container>
 
   <container name="qnode2" hostname="qnode2" type="qnode_orch">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.0.20/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.2.20/24</default_ip>
+    </interface>
+    <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.7.20/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="qnode3" hostname="qnode3" type="qnode_orch">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.0.30/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.3.30/24</default_ip>
+    </interface>
+    <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.7.30/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="kme1" hostname="kme1" type="kme">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.4.10/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.1.1/24</default_ip>
+    </interface>
+    <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.5.10/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="kme2" hostname="kme2" type="kme">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.4.20/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.2.2/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="kme3" hostname="kme3" type="kme">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.4.30/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.3.3/24</default_ip>
+    </interface>
+    <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.5.20/24</default_ip>
     </interface>
   </container>
 
   <container name="sdn_node" hostname="sdn_node" type="sdn-qorchestrator">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.5.30/24</default_ip>
+      <default_ip>192.168.4.40/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.7.1/24</default_ip>
     </interface>
   </container>
-  
-  <!-- <container name="switch_q1" hostname="switch_q1" type="switch_q">
+
+  <container name="R1" hostname="R1" type="router">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.5.1/24</default_ip>
     </interface>
     <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.6.1/24</default_ip>
+      <default_ip>192.168.6.1/30</default_ip>
     </interface>
-    <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.7.1/24</default_ip>
+  </container>
+  
+  <container name="R2" hostname="R2" type="router">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.5.2/24</default_ip>
     </interface>
-  </container> -->
-
-  <!-- <network name="net6" type="switch">
-    
-    <container name="switch_q1">
-      <interface name="eth0"/>
-    </container>
-    
-    <container name="qnode1">
-      <interface name="eth0"/>
-    </container>
-
-  </network>
-
-  <network name="net7" type="switch">
-    
-    <container name="switch_q1">
-      <interface name="eth1"/>
-    </container>
-    
-    <container name="qnode2">
-      <interface name="eth0"/>
-    </container>
-
-  </network> -->
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.6.2/30</default_ip>
+    </interface>    
+  </container>
 
   <network name="net1" type="switch">
 
@@ -67,10 +109,116 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     <container name="qnode2">
       <interface name="eth0"/>
     </container>
-    
-    <container name="sdn_node">
+
+    <container name="qnode3">
+      <interface name="eth0"/>
+    </container>    
+
+  </network>
+  
+  <network name="net2" type="switch">
+
+    <container name="qnode1">
+      <interface name="eth1"/>
+    </container>
+    <container name="kme1">
+      <interface name="eth1"/>
+    </container>    
+
+  </network>
+
+  <network name="net3" type="switch">
+
+    <container name="qnode2">
+      <interface name="eth1"/>
+    </container>
+    <container name="kme2">
+      <interface name="eth1"/>
+    </container>    
+
+  </network>
+
+  <network name="net4" type="switch">
+
+    <container name="qnode3">
+      <interface name="eth1"/>
+    </container>
+    <container name="kme3">
+      <interface name="eth1"/>
+    </container>    
+
+  </network>
+
+  <network name="net5" type="switch">
+
+    <container name="kme1">
       <interface name="eth0"/>
     </container>
+    
+    <container name="kme2">
+      <interface name="eth0"/>
+    </container>
+
+    <container name="kme3">
+      <interface name="eth0"/>
+    </container>   
+
+    <container name="sdn_node">
+      <interface name="eth0"/>
+    </container>   
+
+  </network>
+
+  <network name="net6" type="switch">
+
+    <container name="kme1">
+      <interface name="eth2"/>
+    </container>
+    <container name="R1">
+      <interface name="eth0"/>
+    </container>    
+
+  </network>
+
+  <network name="net7" type="switch">
+
+    <container name="kme3">
+      <interface name="eth2"/>
+    </container>
+    <container name="R2">
+      <interface name="eth0"/>
+    </container>    
+
+  </network>
+
+  <network name="net8" type="switch">
+
+    <container name="R1">
+      <interface name="eth1"/>
+    </container>
+    <container name="R2">
+      <interface name="eth1"/>
+    </container>    
+
+  </network>
+
+  <network name="net9" type="switch">
+
+    <container name="qnode1">
+      <interface name="eth2"/>
+    </container>
+    
+    <container name="qnode2">
+      <interface name="eth2"/>
+    </container>
+
+    <container name="qnode3">
+      <interface name="eth2"/>
+    </container>   
+
+    <container name="sdn_node">
+      <interface name="eth1"/>
+    </container>   
 
   </network>
 
