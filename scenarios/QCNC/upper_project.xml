@@ -78,7 +78,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
       <default_ip>192.168.4.40/24</default_ip>
     </interface>
     <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.7.1/24</default_ip>
+      <default_ip>192.168.1.4/24</default_ip>
     </interface>
   </container>
 
@@ -137,7 +137,11 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     </container>
     <container name="kme3">
       <interface name="eth1"/>
-    </container>    
+    </container>   
+
+    <container name="sdn_node">
+      <interface name="eth1"/>
+    </container>   
 
   </network>
 
@@ -207,10 +211,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     <container name="qnode3">
       <interface name="eth2"/>
     </container>   
-
-    <container name="sdn_node">
-      <interface name="eth1"/>
-    </container>   
+ 
 
   </network>
 
