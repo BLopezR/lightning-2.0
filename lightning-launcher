@@ -94,14 +94,14 @@ if [ $(log_name) != "root" -a $(whoami) != "root" ]
 then
   # ptoribi: the program was executed as a regular user
   # I use "$@" for propagating all the arguments among scripts.
-  mkdir -p $SHARED_FOLDER
+  sudo mkdir -p $SHARED_FOLDER
   sudo $LIGHTNING_INSTALLATION_PATH/lightning "$@"
 
 elif [ $(log_name) != "root" -a $(whoami) == "root" ]
 then
   # ptoribi: the program was executed as a regular user with sudo
   # I use "$@" for propagating all the arguments among scripts.
-  mkdir -p $SHARED_FOLDER
+  sudo mkdir -p $SHARED_FOLDER
   $LIGHTNING_INSTALLATION_PATH/lightning "$@"
 
 elif [ $(log_name) == "root" -a $(whoami) == "root" ]
