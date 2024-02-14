@@ -49,7 +49,7 @@ then
   mkdir -p $SHARED_FOLDER
   chmod 770 /tmp/$USER_BEHIND_SUDO
 else
-  SHARED_FOLDER=$USER_BEHIND_SUDO_HOME_PATH/$SHARED_FOLDER_NAME
+  SHARED_FOLDER=/home/ubuntu/$SHARED_FOLDER_NAME
 fi
 
 # paaguti: When REMOTE=1, cleanup the file holding the docker commands
