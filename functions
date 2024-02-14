@@ -1168,23 +1168,23 @@ read_xml() {
         display_host ${CONTAINER_NAME_ARRAY[index]} ${CONTAINER_HOSTNAME_ARRAY[index]}
       fi
       
-      if [ ${CONTAINER_TYPE_ARRAY[index]} == "switch_q" ]
-      then
-        display_host ${CONTAINER_NAME_ARRAY[index]} ${CONTAINER_HOSTNAME_ARRAY[index]}
-      fi
+      # if [ ${CONTAINER_TYPE_ARRAY[index]} == "switch_q" ]
+      # then
+      #   display_host ${CONTAINER_NAME_ARRAY[index]} ${CONTAINER_HOSTNAME_ARRAY[index]}
+      # fi
 
       if [ ${CONTAINER_TYPE_ARRAY[index]} == "router" ]
       then
         display_router ${CONTAINER_NAME_ARRAY[index]} ${CONTAINER_HOSTNAME_ARRAY[index]}
       fi
     
-      # Added to display the other types of containers:
-      for image in ${DOCKER_IMAGE_TYPES[@]}; do
-        if [ ${CONTAINER_TYPE_ARRAY[index]} == $image ]
-        then
-          display_host ${CONTAINER_NAME_ARRAY[index]} ${CONTAINER_HOSTNAME_ARRAY[index]}
-        fi
-      done 
+      # # Added to display the other types of containers:
+      # for image in ${DOCKER_IMAGE_TYPES[@]}; do
+      #   if [ ${CONTAINER_TYPE_ARRAY[index]} == $image ]
+      #   then
+      #     display_host ${CONTAINER_NAME_ARRAY[index]} ${CONTAINER_HOSTNAME_ARRAY[index]}
+      #   fi
+      # done 
 
     done
     #
