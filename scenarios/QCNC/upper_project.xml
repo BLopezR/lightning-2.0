@@ -21,7 +21,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
       <default_ip>192.168.0.20/24</default_ip>
     </interface>
     <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.2.20/24</default_ip>
+      <default_ip>192.168.1.20/24</default_ip>
     </interface>
     <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.7.20/24</default_ip>
@@ -33,7 +33,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
       <default_ip>192.168.0.30/24</default_ip>
     </interface>
     <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.3.30/24</default_ip>
+      <default_ip>192.168.1.30/24</default_ip>
     </interface>
     <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.7.30/24</default_ip>
@@ -57,7 +57,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
       <default_ip>192.168.4.20/24</default_ip>
     </interface>
     <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.2.2/24</default_ip>
+      <default_ip>192.168.1.2/24</default_ip>
     </interface>
   </container>
 
@@ -66,7 +66,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
       <default_ip>192.168.4.30/24</default_ip>
     </interface>
     <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.3.3/24</default_ip>
+      <default_ip>192.168.1.3/24</default_ip>
     </interface>
     <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.5.20/24</default_ip>
@@ -125,20 +125,12 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
       <interface name="eth1"/>
     </container>    
 
-  </network>
-
-  <network name="net3" type="switch">
-
     <container name="qnode2">
       <interface name="eth1"/>
     </container>
     <container name="kme2">
       <interface name="eth1"/>
     </container>    
-
-  </network>
-
-  <network name="net4" type="switch">
 
     <container name="qnode3">
       <interface name="eth1"/>
