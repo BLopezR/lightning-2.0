@@ -52,7 +52,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     </interface>
   </container>
 
-  <container name="R1" hostname="R1" type="router">
+  <container name="H1" hostname="H1" type="host">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.2.2/24</default_ip>
     </interface>
@@ -61,7 +61,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     </interface>
   </container>
   
-  <container name="R2" hostname="R2" type="router">
+  <container name="H2" hostname="H2" type="host">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.3.2/24</default_ip>
     </interface>
@@ -107,7 +107,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     <container name="kme1">
       <interface name="eth1"/>
     </container>
-    <container name="R1">
+    <container name="H1">
       <interface name="eth0"/>
     </container>    
 
@@ -118,7 +118,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     <container name="kme3">
       <interface name="eth1"/>
     </container>
-    <container name="R2">
+    <container name="H2">
       <interface name="eth0"/>
     </container>    
 
@@ -126,10 +126,10 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
 
   <network name="net8" type="switch">
 
-    <container name="R1">
+    <container name="H1">
       <interface name="eth1"/>
     </container>
-    <container name="R2">
+    <container name="H2">
       <interface name="eth1"/>
     </container>    
 
