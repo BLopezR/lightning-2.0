@@ -29,5 +29,4 @@ COPY ./setup_switch.sh .
 RUN sudo chmod +x ./setup_switch.sh
 
 
-
 CMD [ "./setup_switch.sh" ]
