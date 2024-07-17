@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<scenario description="Escenario para kmes virtualizados"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
+
+  <container name="qnode1" hostname="qnode1" type="qnode_orch">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.0.10/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.1.10/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="qnode2" hostname="qnode2" type="qnode_orch">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.0.20/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.1.20/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="qnode3" hostname="qnode3" type="qnode_orch">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.0.30/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.1.30/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="kme1" hostname="kme1" type="virt_kmes">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.1.1/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.2.1/24</default_ip>
+    </interface>
+    <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.3.1/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="kme2" hostname="kme2" type="virt_kmes">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.1.2/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.2.2/24</default_ip>
+    </interface>
+    <interface name="eth2" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.3.2/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="kme3" hostname="kme3" type="virt_kmes">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.1.3/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.2.3/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="orchestrator" hostname="orchestrator" type="control_topology">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.0.4/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.2.4/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="controls" hostname="controls" type="acc_adm_control">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.2.5/24</default_ip>
+    </interface>
+  </container>
+
+  <container name="H1" hostname="H1" type="client_virt_kmes">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.3.10/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.6.1/30</default_ip>
+    </interface>
+  </container>
+  
+  <container name="H2" hostname="H2" type="client_virt_kmes">
+    <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.3.20/24</default_ip>
+    </interface>
+    <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
+      <default_ip>192.168.6.2/30</default_ip>
+    </interface>    
+  </container>
+
+  <network name="net1" type="switch">
+
+    <container name="qnode1">
+      <interface name="eth0"/>
+    </container>
+    
+    <container name="qnode2">
+      <interface name="eth0"/>
+    </container>
+
+    <container name="qnode3">
+      <interface name="eth0"/>
+    </container>    
+
+    <container name="orchestrator">
+      <interface name="eth0"/>
+    </container>   
+  </network>
+
+  <network name="net2" type="switch">
+
+    <container name="kme1">
+      <interface name="eth0"/>
+    </container>
+    <container name="qnode1">
+      <interface name="eth1"/>
+    </container>    
+
+  </network>
+
+  <network name="net3" type="switch">
+
+    <container name="kme2">
+      <interface name="eth0"/>
+    </container>
+    <container name="qnode2">
+      <interface name="eth1"/>
+    </container>    
+
+  </network>
+
+  <network name="net4" type="switch">
+
+    <container name="kme3">
+      <interface name="eth0"/>
+    </container>
+    <container name="qnode3">
+      <interface name="eth1"/>
+    </container>    
+
+  </network>
+
+  <network name="net5" type="switch">
+
+    <container name="kme1">
+      <interface name="eth1"/>
+    </container>
+    <container name="kme2">
+      <interface name="eth1"/>
+    </container>    
+    <container name="kme3">
+      <interface name="eth1"/>
+    </container>
+    <container name="orchestrator">
+      <interface name="eth1"/>
+    </container>  
+    <container name="controls">
+      <interface name="eth0"/>
+    </container>  
+
+  </network>
+
+  <network name="net6" type="switch">
+
+    <container name="kme1">
+      <interface name="eth2"/>
+    </container>
+    <container name="H1">
+      <interface name="eth0"/>
+    </container>    
+
+  </network>
+  
+  <network name="net7" type="switch">
+
+    <container name="kme2">
+      <interface name="eth2"/>
+    </container>
+    <container name="H2">
+      <interface name="eth0"/>
+    </container>    
+
+  </network>
+
+  <network name="net8" type="switch">
+
+    <container name="H1">
+      <interface name="eth1"/>
+    </container>
+    <container name="H2">
+      <interface name="eth1"/>
+    </container>    
+
+  </network>
+
+</scenario>
