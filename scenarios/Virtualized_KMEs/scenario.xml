@@ -64,7 +64,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     </interface>
   </container>
 
-  <container name="orchestrator" hostname="orchestrator" type="control_topology">
+  <container name="ctopology" hostname="ctopology" type="control_topology">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.0.4/24</default_ip>
     </interface>
@@ -111,7 +111,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
       <interface name="eth0"/>
     </container>    
 
-    <container name="orchestrator">
+    <container name="ctopology">
       <interface name="eth0"/>
     </container>   
   </network>
@@ -160,7 +160,7 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     <container name="kme3">
       <interface name="eth1"/>
     </container>
-    <container name="orchestrator">
+    <container name="ctopology">
       <interface name="eth1"/>
     </container>  
     <container name="controls">
