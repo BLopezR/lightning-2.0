@@ -190,6 +190,10 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
       <interface name="eth1"/>
     </container>
     
+    <container name="ctopology">
+      <interface name="eth0"/>
+    </container>  
+    
   </network>
 
   <network name="net2" type="switch">
