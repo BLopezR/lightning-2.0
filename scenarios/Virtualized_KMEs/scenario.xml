@@ -115,12 +115,12 @@ xsi:noNamespaceSchemaLocation="lightning-xml-schema.xsd">
     </interface>
   </container>
 
-    <container name="kme6" hostname="kme6" type="virt_kmes">
+  <container name="kme6" hostname="kme6" type="virt_kmes">
     <interface name="eth0" enable_ipv6="yes" link_local_ipv6="no">
       <default_ip>192.168.0.6/24</default_ip>
     </interface>
     <interface name="eth1" enable_ipv6="yes" link_local_ipv6="no">
-      <default_ip>192.168.100.6 0/24</default_ip>
+      <default_ip>192.168.100.60/24</default_ip>
     </interface>
   </container>
 
